@@ -1,26 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+// import '../src/css';
+// import '../src/js';
+import NavBar from './NavBar';
+import CardsContainer from './CardsContainer';
 
-function App() {
+
+class App extends React.Component {
+
+  state = {
+    allCards: []
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/cards')
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      this.setState({
+        allCards: data})
+        // ,()=>console.log(this.state.allCards))
+    });
+  }
+
+  render() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div >
+    <NavBar/>
+    <CardsContainer allCards={this.state.allCards}/> 
+      <header>
+    {/* <button type="button" className="btn btn-primary">Button</button> */}
+
+  
       </header>
     </div>
   );
+}
 }
 
 export default App;
