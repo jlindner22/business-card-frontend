@@ -11,6 +11,7 @@ class CardsContainer extends React.Component {
   return (
     <div>
           {this.props.allCards.map(card => <Card1 card={card}/> )} 
+          {this.props.allCards.map(card => <Card2 card={card}/> )} 
     </div>
   );
 }
