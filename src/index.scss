@@ -55,10 +55,10 @@ body //{ background: #757575; overflow-x: hidden; }
 }
 
 /* Flip the card on hover */
-// .container:hover .card,
-// .back {
-//   transform: rotateY(-180deg) translateZ(1px);
-// }
+.container:hover .card,
+.back {
+  transform: rotateY(-180deg) translateZ(1px);
+}
 
 /* Front styling */
 .front {
@@ -121,7 +121,7 @@ p {
   background-position: 0 0, 3px 3px;
 }
 
-.card {
+.card2 {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   display: grid;
   font-family: 'Trebuchet MS', sans-serif;

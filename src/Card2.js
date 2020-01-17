@@ -6,17 +6,17 @@ class Card2 extends React.Component {
 
   return (
 
-<div class="card back">
+<div class="card2 back">
   <div class="yellow"></div>
   <div class="top dots"></div>
   <div class="personal-info">
     <p>{this.props.card.name}</p>
-    <p>Photographer. Maker. Doer.</p>
-    <p>123 Address St</p>
-    <p>Sacramento, CA 14234</p>
-    <p>567.890.1234</p>
-    <p>www.kristastone.com</p>
-    <p>@kristastone</p>
+    <p><span>{this.props.card.title}</span></p>
+    <p>{this.props.card.address}</p>
+    <p>{this.props.card.email}</p>
+    <p>{this.props.card.phone_number}</p>
+    <p>{this.props.card.website}</p>
+    <p>{this.props.card.linkedin}</p>
   </div>
   <div class="bottom dots"></div>
   <div class="pink"></div>
@@ -46,28 +46,28 @@ class Card2 extends React.Component {
 export default Card2;
 
 
-<div class="card front">
-  <div class="blue"></div>
-  <div class="yellow"></div>
-  <div class="pink"></div>
-  <div class="dots"></div>
-  <div class="personal-intro">
-    <p>Krista Stone</p>
-    <p>Photographer Maker Doer</p>
-  </div>
-</div>
-<div class="card back">
-  <div class="yellow"></div>
-  <div class="top dots"></div>
-  <div class="personal-info">
-    <p>Krista Stone</p>
-    <p>Photographer. Maker. Doer.</p>
-    <p>123 Address St</p>
-    <p>Sacramento, CA 14234</p>
-    <p>567.890.1234</p>
-    <p>www.kristastone.com</p>
-    <p>@kristastone</p>
-  </div>
-  <div class="bottom dots"></div>
-  <div class="pink"></div>
-</div>
+// <div class="card front">
+//   <div class="blue"></div>
+//   <div class="yellow"></div>
+//   <div class="pink"></div>
+//   <div class="dots"></div>
+//   <div class="personal-intro">
+//     <p>Krista Stone</p>
+//     <p>Photographer Maker Doer</p>
+//   </div>
+// </div>
+// <div class="card back">
+//   <div class="yellow"></div>
+//   <div class="top dots"></div>
+//   <div class="personal-info">
+//     <p>Krista Stone</p>
+//     <p>Photographer. Maker. Doer.</p>
+//     <p>123 Address St</p>
+//     <p>Sacramento, CA 14234</p>
+//     <p>567.890.1234</p>
+//     <p>www.kristastone.com</p>
+//     <p>@kristastone</p>
+//   </div>
+//   <div class="bottom dots"></div>
+//   <div class="pink"></div>
+// </div>

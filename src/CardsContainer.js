@@ -1,5 +1,6 @@
 import React from 'react';
 import Card1 from './Card1';
+import Card2 from './Card2';
 
 
 class CardsContainer extends React.Component {
@@ -10,8 +11,13 @@ class CardsContainer extends React.Component {
 
   return (
     <div>
-          {this.props.allCards.map(card => <Card1 card={card}/> )} 
-          {this.props.allCards.map(card => <Card2 card={card}/> )} 
+    <div>
+      {this.props.allCards.map(card => <Card1 card={card}/> )} 
+    </div>
+
+    <div>
+      {/* {this.props.allCards.map(card => <Card2 card={card}/> )}  */}
+    </div>
     </div>
   );
 }
