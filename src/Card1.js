@@ -1,37 +1,52 @@
 import React from 'react';
-
+import { Route, Switch } from 'react-router-dom';
 
 class Card1 extends React.Component {
 
   render() {
-console.log(this.props.card)
-
+    let style;
+    let price;
+    if(this.props.card.style ==="basic white"){
+      style= "card2"
+      price = 4.99
+    } else if (this.props.card.style ==="basic blue"){
+      style= "card3"
+      price = 4.99
+    } else if (this.props.card.style ==="basic green"){
+      style= "card4"
+      price = 4.99
+    } else if (this.props.card.style ==="basic gray"){
+      style= "card5"
+      price = 4.99
+    } else if (this.props.card.style ==="basic purple"){
+      style= "card6"
+      price = 4.99
+    }
   return (
-
-<div class="container">
-  <div class="card">
-    
-    <div class="front side">
-      <h1 class="logo">Zach Saucier</h1>
-    </div>
-    
-    <div class="back side">
-      <h3 class="name"> {this.props.card.name}</h3>
-      <div>{this.props.card.title}</div>      
-      <div class="info">
-      <p><span class="property">Company: </span>{this.props.card.company}</p>
-      <p><span class="property">Address: </span>{this.props.card.address}</p>
-        <p><span class="property">Email: </span>{this.props.card.email}</p>
-        <p><span class="property">LinkedIn: </span>{this.props.card.linkedin}</p>
-        <p><span class="property">Phone: </span>{this.props.card.phone_number}</p>
-        <p><span class="property">Website: </span>{this.props.card.website}</p>
+    <div className="col-sm-6" >
+      <div className="business-card ">
+        <div className={`card back ${style}`}>
+          <div className="top dots"></div>
+          <div className="personal-info">
+            <p>{this.props.card.name}</p>
+            <p>{this.props.card.title}</p>
+            <p>{this.props.card.address}</p>
+            <p>{this.props.card.phone_number}</p>
+            <p>{this.props.card.address}</p>
+          </div>
+        <div className="bottom dots"></div>
+        <div className="pink"></div>
+      </div>
+        <div>
+          <p className="card-title text-center">{this.props.card.style}</p>
+        </div>
+        <div className="text-center">
+          <button href ="#" className="btn btn-primary " onClick={this.props.handleCardClick}>Select</button>
+          <div className="card-footer">${`${price}`}</div>
+        </div>
       </div>
     </div>
-    
-  </div>
-</div>
   );
 }
 }
-
 export default Card1;
