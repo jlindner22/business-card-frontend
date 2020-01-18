@@ -4,6 +4,7 @@ import './App.css';
 // import '../src/js';
 import NavBar from './NavBar';
 import CardsContainer from './CardsContainer';
+import FooterPage from './FooterPage'
 import { Route, Switch } from 'react-router-dom';
 
 
@@ -77,6 +78,7 @@ class App extends React.Component {
     value={this.state.formInput}
     handleSubmit={this.handleSubmit}/> 
    </body>
+   <FooterPage/>
     </div>
   );
 }
