@@ -14,8 +14,7 @@ class CardsContainer extends React.Component {
 handleCardClick = () => {
   this.setState({
     clicked: !this.state.clicked
-  })
-  console.log("clicked", this.state.clicked)
+  },()=> console.log("clicked", this.state.clicked))
 }
 
   render() {
@@ -25,7 +24,7 @@ handleCardClick = () => {
     <div class="card-deck">
     <div className="container flex row col-sm-12">
       {!this.state.clicked ? this.props.allCards.map(card => <Card1 card={card}
-      handleCardClick={this.handleCardClick}/> ) : this.props.allCards.map(card => <CreateCardPage card={card}/>)}
+      handleCardClick={this.handleCardClick}/> ) : <FormComponent/>}
     {/* //   :
     // <FormComponent handleChange={this.props.handleChange}
      value={this.props.formInput} 

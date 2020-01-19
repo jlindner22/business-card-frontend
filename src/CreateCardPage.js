@@ -5,16 +5,6 @@ import { Route, Switch } from 'react-router-dom';
 
 class CreateCardPage extends React.Component {
 
-//   state = {
-//     clicked: false
-//   }
-
-// handleCardClick = () => {
-//   this.setState({
-//     clicked: !this.state.clicked
-//   })
-//   console.log("clicked", this.state.clicked)
-// }
 
   render() {
 

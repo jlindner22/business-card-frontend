@@ -6,50 +6,53 @@ class FormComponent extends React.Component {
 console.log(this.props.card)
 
   return (
-
-<form >
+<div className="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
+<form className="justify-content-center">
+  <div className="form-group">
   <label >
     Name: 
-    <input type="text" name="name" value={this.props.name} onChange={this.props.handleChange}/>
+    <input className="form-control" type="text" name="name" value={this.props.name} onChange={this.props.handleChange}/>
   </label>
   <br></br>
-  <label>
+  <label >
     Title: 
-    <input type="text" name="title" value={this.props.title} onChange={this.props.handleChange}/>
+    <input className="form-control" type="text" name="title" value={this.props.title} onChange={this.props.handleChange}/>
   </label>
   <br></br>
-  <label>
+  <label >
     Company Name: 
-    <input type="text" name="company" value={this.props.company} onChange={this.props.handleChange}/>
+    <input className="form-control" type="text" name="company" value={this.props.company} onChange={this.props.handleChange}/>
   </label>
   <br></br>
-  <label>
+  <label >
     Company Address: 
-    <input type="text" name="address" value={this.props.address} onChange={this.props.handleChange}/>
+    <input className="form-control" type="text" name="address" value={this.props.address} onChange={this.props.handleChange}/>
   </label>
   <br></br>
-  <label>
+  <label >
     Email: 
-    <input type="text" name="email" value={this.props.email} onChange={this.props.handleChange}/>
+    <input className="form-control" type="text" name="email" value={this.props.email} onChange={this.props.handleChange}/>
   </label>
   <br></br>
-  <label>
+  <label >
     Phone Number: 
-    <input type="text" name="phone_number" value={this.props.phone_number} onChange={this.props.handleChange}/>
+    <input className="form-control" type="text" name="phone_number" value={this.props.phone_number} onChange={this.props.handleChange}/>
   </label>
   <br></br>
-  <label>
+  <label >
     Website: 
-    <input type="text" name="website" value={this.props.website} onChange={this.props.handleChange}/>
+    <input className="form-control" type="text" name="website" value={this.props.website} onChange={this.props.handleChange}/>
   </label>
   <br></br>
-  <label>
+  <label >
     Company logo: 
-    <input type="text" name="logo" value={this.props.logo} onChange={this.props.handleChange}/>
+    <input className="form-control" type="text" name="logo" value={this.props.logo} onChange={this.props.handleChange}/>
   </label>
-  <br></br>
-  <input type="submit" value="Save" />
+  <br/>
+  <input className="btn btn-primary btn-lg" type="submit" value="Save" />
+  </div>
 </form>
+</div>
   );
 }
 }
