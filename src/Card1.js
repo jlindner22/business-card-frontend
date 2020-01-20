@@ -45,16 +45,15 @@ class Card1 extends React.Component {
         <div>
           <p className="text-center">Front</p>
           <div className={`card back ${style}`} onClick={this.handleClick}>
-          <div className="top dots"></div>
           <div className="personal-info">
             <p>{this.props.name}</p>
-            <p>{this.props.title}</p>
+            <p>{this.props.title}</p>            <p>{this.props.address}</p>
+            <p>{this.props.company}</p>
             <p>{this.props.address}</p>
-            <p>{this.props.phone_number}</p>
             <p>{this.props.email}</p>
+            <p>{this.props.phone_number}</p>
+            <p>{this.props.website}</p>
           </div>
-          <div className="bottom dots"></div>
-          <div className="pink"></div>
           </div>
         </div>
 
@@ -63,12 +62,10 @@ class Card1 extends React.Component {
         <div>
           <p className="text-center">Back</p>
           <div className={`card back ${style}`} onClick={this.handleClick}>
-          <div className="top dots"></div>
           <div className="personal-info">
+            <br></br>
             <img src={this.props.logo} className="logo"></img>
           </div>
-          <div className="bottom dots"></div>
-          <div className="pink"></div>
         </div>
         </div>
       

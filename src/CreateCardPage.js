@@ -9,8 +9,8 @@ class CreateCardPage extends React.Component {
     name: "Your Name",
     title: "Title",
     company: 'Company',
-    address: 'Address',
-    email: 'email',
+    address: 'Company Address',
+    email: 'Email',
     phone_number: 'Phone Number',
     website: "Website",
     logo: "https://course_report_production.s3.amazonaws.com/rich/rich_files/rich_files/999/s300/flatironschool.png",
@@ -58,12 +58,7 @@ class CreateCardPage extends React.Component {
     <FormComponent
       handleChange={this.handleChange}
     />
-    {/* //   :
-    // <FormComponent handleChange={this.props.handleChange}
-     value={this.props.formInput} 
-     handleSubmit={this.handleSubmit}/> } 
-     </div>
-     <div> */}
+
     </div>
     </div>
     
