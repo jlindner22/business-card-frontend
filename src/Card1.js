@@ -4,7 +4,15 @@ import { Link } from 'react-router-dom';
 
 class Card1 extends React.Component {
 
-  //should style be a state?
+  state={
+    clicked: true
+  }
+
+  handleClick=()=>{
+    this.setState({
+      clicked: !this.state.clicked
+    },()=>console.log(this.state.clicked))
+  }
 
   render() {
 
@@ -27,12 +35,16 @@ class Card1 extends React.Component {
       price = 4.99
     }
 
-    // console.log(this.props.card.id)
 
   return (
     <div className="col-sm-6" >
-      <div className="business-card ">
-        <div className={`card back ${style}`}>
+      <div className="business-card " >
+
+        {this.state.clicked?
+
+        <div>
+          <p className="text-center">Front</p>
+          <div className={`card back ${style}`} onClick={this.handleClick}>
           <div className="top dots"></div>
           <div className="personal-info">
             <p>{this.props.name}</p>
@@ -41,16 +53,35 @@ class Card1 extends React.Component {
             <p>{this.props.phone_number}</p>
             <p>{this.props.email}</p>
           </div>
-        <div className="bottom dots"></div>
-        <div className="pink"></div>
-      </div>
+          <div className="bottom dots"></div>
+          <div className="pink"></div>
+          </div>
+        </div>
+
+        :
+
         <div>
-          <p className="card-title text-center font-weight-bold">{this.props.style}</p>
+          <p className="text-center">Back</p>
+          <div className={`card back ${style}`} onClick={this.handleClick}>
+          <div className="top dots"></div>
+          <div className="personal-info">
+            <img src={this.props.logo} className="logo"></img>
+          </div>
+          <div className="bottom dots"></div>
+          <div className="pink"></div>
+        </div>
+        </div>
+      
+        }
+
+        <div>
+          <p className="card-title text-center font-weight-bold">{this.props.style.toUpperCase()}</p>
         </div>
         <div className="text-center">
           {this.props.children}
           <div className="card-footer">${`${price}`}</div>
         </div>
+      
       </div>
     </div>
   );

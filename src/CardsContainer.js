@@ -21,7 +21,7 @@ class CardsContainer extends React.Component {
         address={card.address}
         email={card.email}
         phone_number={card.phone_number}
-        logo={card.logo}
+        logo={"https://course_report_production.s3.amazonaws.com/rich/rich_files/rich_files/999/s300/flatironschool.png"}
         style={card.style}
       >
         <Link to={`/cards/${card.id}`}> <button 

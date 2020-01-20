@@ -53,7 +53,6 @@ class FormComponent extends React.Component {
   </div>
 </form>
 </div>
-
   );
 }
 }

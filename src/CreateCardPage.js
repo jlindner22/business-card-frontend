@@ -12,7 +12,8 @@ class CreateCardPage extends React.Component {
     address: 'Address',
     email: 'email',
     phone_number: 'Phone Number',
-    logo: 'Logo',
+    website: "Website",
+    logo: "https://course_report_production.s3.amazonaws.com/rich/rich_files/rich_files/999/s300/flatironschool.png",
   }
 
   handleChange = (e) => {
@@ -27,10 +28,11 @@ class CreateCardPage extends React.Component {
 
    const getCard = () => {
      let url = window.location.href.toString()
-     let cardId = parseInt(url[url.length - 1])
-     console.log(cardId)
+     let splitUrl = url.split("/")[4]
+     let cardId = parseInt(splitUrl)
      let currentCard=this.props.allCards.find(card=> card.id === cardId)
      return (
+       <div className = "container">
       <Card1
         name={this.state.name}
         title={this.state.title}
@@ -38,9 +40,11 @@ class CreateCardPage extends React.Component {
         address={this.state.address}
         email={this.state.email}
         phone_number={this.state.phone_number}
+        website={this.state.website}
         logo={this.state.logo}
         style={currentCard.style}
       />
+      </div>
     )
     }
 
