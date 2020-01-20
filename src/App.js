@@ -1,20 +1,30 @@
 import React from 'react';
 import './App.css';
-// import '../src/css';
-// import '../src/js';
 import NavBar from './NavBar';
 import CardsContainer from './CardsContainer';
 import FooterPage from './FooterPage'
-import { Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Home from './Home';
+import MyCards from './MyCards';
+import CreateCardPage from './CreateCardPage';
 
-
-let baseURL = "http://localhost:3000/"
+let baseURL = "http://localhost:3000"
 
 class App extends React.Component {
 
   state = {
     allCards: [],
-    formInput: ''
+    cardMap: {},
+    
+    name: '',
+    title: '',
+    company: '',
+    address: '',
+    email: '',
+    phone_number: '',
+    logo: '',
+
+    // formInput: ''
   }
 
   componentDidMount() {
@@ -23,8 +33,12 @@ class App extends React.Component {
       return response.json();
     })
     .then((data) => {
+      let cardMap = {}
+      data.map(card => cardMap[card.id] = card)
       this.setState({
-        allCards: data})
+        allCards: data,
+        cardMap
+      })
         // ,()=>console.log(this.state.allCards))
     });
   }
@@ -33,30 +47,54 @@ class App extends React.Component {
   this.setState({
       [e.target.name]: e.target.value
   })
-  console.log(this.state.formInput)
+  console.log(this.state.e.target.value)
   }
 
+  //post info in inputs to backend and navigate to My Cards page
   handleSubmit = (e) => {
-    //post info in inputs to backend and navigate to My Cards page
     e.preventDefault()
-    fetch(`${baseURL}/cards/${this.props.cardId}/cart`, {
+   // fetch(`${baseURL}/cards/${this.props.cardId}/cart`, 
+ // {
+    fetch(`${baseURL}/mycards`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         "Accepts": "application/json",
       },
-      body: JSON.stringify(this.state)
-    })
-    .then(res => res.json())
-    .then(response => {
-        // this.setState({...this.state.formInput}, this.props.toggleNewReviewForm)
-      // })
-      console.log("submit")
+        body: JSON.stringify({
+        name: this.state.name,
+        title: this.state.title,
+        company: this.state.company,
+        address: this.state.address,
+        email: this.state.email,
+        phone_number: this.state.phone_number,
+        website: this.state.website,
+        logo: this.state.logo
+        })
+      })
+  // .then(res => res.json())
+  // .then(response => {
+      // this.setState({...this.state.formInput}, this.props.toggleNewReviewForm)
+    // })
+    console.log("submit", this.state.name)
     }
-    )}
+  // )}
+
+
+  //  this instead? 
+   // fetch(`${baseURL}/mycards`, 
+
+//    componentDidUpdate(prevProps) {
+//      let cardMap = {}
+//      if (this.props !== prevProps) {this.state.allCards.map(card => cardMap[card.id] = card)
+//      this.setState({ cardMap })}
+//      console.log(this.state.cardMap)
+//  }
 
   render() {
+
   return (
+    <Router>
        <div >
          <div>
        <header>
@@ -64,22 +102,27 @@ class App extends React.Component {
         <NavBar/>
       </header></div>
     <body>
-    {/* <Switch> */}
-      {/* <Route exact path="/" render={() => <div>HOME Page</div>} /> */}
-      {/* <Route path="/login" component={Login}/> */}
-      {/* <Route path="/signup" component={Signup}/> */}
-          {/* <Route path="/cards/:id" render={() => <div>DIS A MOVIE 🎞</div>} /> */}
-      {/* <Route path="/cards" render={(routerProps) => 
-    {/* </Switch> */}
-      <CardsContainer 
-      // {...routerProps} 
-      handleChange={this.handleChange}    
-       allCards={this.state.allCards}
-    value={this.state.formInput}
-    handleSubmit={this.handleSubmit}/> 
+      <Switch>
+      <Route exact path="/" render={(routerProps) => <Home {...routerProps} 
+    allCards={this.state.allCards} handleChange={this.handleChange}     
+      />}/>
+      <Route exact path="/cards" render={(routerProps) => <CardsContainer {...routerProps} 
+    allCards={this.state.allCards} handleChange={this.handleChange} value={this.state.formInput}
+    handleSubmit={this.handleSubmit}    
+      />}/>
+      <Route exact path="/mycards" render={(routerProps) => <MyCards {...routerProps} 
+    allCards={this.state.allCards} handleChange={this.handleChange} value={this.state.formInput}
+    handleSubmit={this.handleSubmit}    
+      />}/>
+      <Route exact path="/cards/:id" render={(routerProps) => <CreateCardPage {...routerProps} 
+    cardMap={this.state.cardMap} handleChange={this.handleChange} value={this.state.formInput}
+    handleSubmit={this.handleSubmit}   
+      />}/>
+    </Switch>
    </body>
-   <FooterPage/>
+    <FooterPage/>
     </div>
+  </Router>
   );
 }
 }

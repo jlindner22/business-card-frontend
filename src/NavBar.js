@@ -2,18 +2,28 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class NavBar extends React.Component {
+  
   render() {
-  return (
+    const NavStyle = {
+      color: 'white'
+    };
+
+    return (
     <div>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="#">Business Cards</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+        {/* <a className="navbar-brand" href="#">Business Cards</a> */}
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="#">My Cards</a>
+        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div className="navbar-nav">
+            <a className="nav-item nav-link active font-weight-bold"> 
+              <Link style={NavStyle} to="/"> Home 
+              <span className="sr-only">(current)</span>
+              </Link>
+              <Link style={NavStyle} to="/cards"> All Cards </Link>
+              <Link style={NavStyle} to="/mycards"> My Cards </Link>
+              </a>
           </div>
         </div>
       </nav>
