@@ -15,16 +15,8 @@ class App extends React.Component {
   state = {
     allCards: [],
     cardMap: {},
-    
-    name: '',
-    title: '',
-    company: '',
-    address: '',
-    email: '',
-    phone_number: '',
-    logo: '',
+    cardId: null
 
-    // formInput: ''
   }
 
   componentDidMount() {
@@ -41,13 +33,6 @@ class App extends React.Component {
       })
         // ,()=>console.log(this.state.allCards))
     });
-  }
-
-  handleChange = (e) => {
-  this.setState({
-      [e.target.name]: e.target.value
-  })
-  console.log(this.state.e.target.value)
   }
 
   //post info in inputs to backend and navigate to My Cards page
@@ -104,18 +89,18 @@ class App extends React.Component {
     <body>
       <Switch>
       <Route exact path="/" render={(routerProps) => <Home {...routerProps} 
-    allCards={this.state.allCards} handleChange={this.handleChange}     
+    allCards={this.state.allCards}     
       />}/>
       <Route exact path="/cards" render={(routerProps) => <CardsContainer {...routerProps} 
-    allCards={this.state.allCards} handleChange={this.handleChange} value={this.state.formInput}
+    allCards={this.state.allCards} value={this.state.formInput}
     handleSubmit={this.handleSubmit}    
       />}/>
       <Route exact path="/mycards" render={(routerProps) => <MyCards {...routerProps} 
-    allCards={this.state.allCards} handleChange={this.handleChange} value={this.state.formInput}
+    allCards={this.state.allCards} value={this.state.formInput}
     handleSubmit={this.handleSubmit}    
       />}/>
       <Route exact path="/cards/:id" render={(routerProps) => <CreateCardPage {...routerProps} 
-    cardMap={this.state.cardMap} handleChange={this.handleChange} value={this.state.formInput}
+    cardMap={this.state.cardMap} allCards={this.state.allCards} value={this.state.formInput}
     handleSubmit={this.handleSubmit}   
       />}/>
     </Switch>

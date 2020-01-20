@@ -3,7 +3,6 @@ import React from 'react';
 class FormComponent extends React.Component {
 
   render() {
-console.log(this.props.card)
 
   return (
 

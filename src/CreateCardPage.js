@@ -5,34 +5,55 @@ import { Route, Switch } from 'react-router-dom';
 
 class CreateCardPage extends React.Component {
 
-//   state = {
-//     clicked: false
-//   }
+  state = {
+    name: "Your Name",
+    title: "Title",
+    company: 'Company',
+    address: 'Address',
+    email: 'email',
+    phone_number: 'Phone Number',
+    logo: 'Logo',
+  }
 
-// handleCardClick = () => {
-//   this.setState({
-//     clicked: !this.state.clicked
-//   })
-//   console.log("clicked", this.state.clicked)
-// }
+  handleChange = (e) => {
+    this.setState({
+        [e.target.name]: e.target.value
+    },()=>console.log(this.state.name))
+  }
 
   render() {
+
+    console.log(this.props.cardMap)
 
    const getCard = () => {
      let url = window.location.href.toString()
      let cardId = parseInt(url[url.length - 1])
-     return this.props.cardMap[cardId]
+     console.log(cardId)
+     let currentCard=this.props.allCards.find(card=> card.id === cardId)
+     return (
+      <Card1
+        name={this.state.name}
+        title={this.state.title}
+        company={this.state.company}
+        address={this.state.address}
+        email={this.state.email}
+        phone_number={this.state.phone_number}
+        logo={this.state.logo}
+        style={currentCard.style}
+      />
+    )
     }
 
-    console.log(this.props.cardMap)
-    // console.log(getCard())
-    //move form to middle
+
+
   return (
     <div>
     <div>
-     <Card1 card={getCard()}/>
+     {getCard()}
     <br></br>
-    <FormComponent/>
+    <FormComponent
+      handleChange={this.handleChange}
+    />
     {/* //   :
     // <FormComponent handleChange={this.props.handleChange}
      value={this.props.formInput} 

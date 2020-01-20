@@ -5,18 +5,7 @@ import { Link } from 'react-router-dom';
 
 class CardsContainer extends React.Component {
 
-  state = {
-    clicked: false
-  }
-
-handleCardClick = () => {
-  this.setState({
-    clicked: !this.state.clicked
-  })
-  // console.log("card", typeof this)
-  // console.log("card id", this.props.card.id)
-  // console.log("clicked", this.state.clicked)
-}
+  
   render() {
 // console.log(this.props.allCards)
 
@@ -25,9 +14,18 @@ handleCardClick = () => {
     <div className="container flex row col-sm-12">
       {/* {!this.state.clicked} ?  */}
       {this.props.allCards.map(card => 
-      <Card1 card={card}>
+      <Card1 
+        name={card.name}
+        title={card.title}
+        company={card.company}
+        address={card.address}
+        email={card.email}
+        phone_number={card.phone_number}
+        logo={card.logo}
+        style={card.style}
+      >
         <Link to={`/cards/${card.id}`}> <button 
-          className="btn btn-primary" onClick={this.handleCardClick}>Select </button> </Link>
+          className="btn btn-primary" onClick={this.props.handleCardClick}>Select </button> </Link>
       </Card1>  
       )} 
         
