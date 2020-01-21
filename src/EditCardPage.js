@@ -6,22 +6,22 @@ import MyCards from './MyCards';
 
 let baseURL = "http://localhost:3000"
 
-class CreateCardPage extends React.Component {
+class EditCardPage extends React.Component {
 
-  state = {
-    submitted: false,
-    name: "Your Name",
-    title: "Title",
-    company: 'Company',
-    address: 'Company Address',
-    email: 'Email',
-    linkedin: "LinkedIn",
-    phone_number: 'Phone Number',
-    website: "Website",
-    logo: "https://course_report_production.s3.amazonaws.com/rich/rich_files/rich_files/999/s300/flatironschool.png",
-    style: '',
-    myCards: []
-  }
+//   state = {
+//     submitted: false,
+//     name: "Your Name",
+//     title: "Title",
+//     company: 'Company',
+//     address: 'Company Address',
+//     email: 'Email',
+//     linkedin: "LinkedIn",
+//     phone_number: 'Phone Number',
+//     website: "Website",
+//     logo: "https://course_report_production.s3.amazonaws.com/rich/rich_files/rich_files/999/s300/flatironschool.png",
+//     style: '',
+//     myCards: []
+//   }
 
   componentDidMount() {
     window.scrollTo(0, 0)
@@ -39,7 +39,7 @@ class CreateCardPage extends React.Component {
    // fetch(`${baseURL}/cards/${this.props.cardId}/cart`, 
  // {
     fetch(`${baseURL}/mycards`, {
-      method: "POST",
+      method: "PATCH",
       headers: {
         "Content-Type": "application/json",
         "Accepts": "application/json",
@@ -54,7 +54,7 @@ class CreateCardPage extends React.Component {
         phone_number: this.state.phone_number,
         website: this.state.website,
         logo: this.state.logo,
-        style: this.state.style
+        // style: this.state.style
         })
       })
   .then(res => res.json())
@@ -131,4 +131,4 @@ class CreateCardPage extends React.Component {
 }
 }
 
-export default CreateCardPage;
+export default EditCardPage;

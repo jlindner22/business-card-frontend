@@ -90,7 +90,28 @@ $padding:30px;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(12, 1fr);
   padding: $padding;
-  background-color:lightsteelblue;
+  background-color:rgb(233, 152, 229);
+}
+
+.card.back.card7 {
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  padding: $padding;
+  background-color:rgb(231, 224, 129);
+}
+
+.card.back.card8 {
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  padding: $padding;
+  background-color: #fffdd0;
+}
+
+.card.back.card9 {
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  padding: $padding;
+  background-color:rgb(233, 195, 125);
 }
 
   .personal-info {

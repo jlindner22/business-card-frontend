@@ -33,8 +33,16 @@ class Card1 extends React.Component {
     } else if (this.props.style ==="basic purple"){
       style= "card6"
       price = 4.99
+    } else if (this.props.style ==="basic yellow"){
+      style= "card7"
+      price = 4.99
+    } else if (this.props.style ==="basic cream"){
+      style= "card8"
+      price = 4.99
+    } else if (this.props.style ==="basic orange"){
+      style= "card9"
+      price = 4.99
     }
-
 
   return (
     <div className="col-sm-6" >

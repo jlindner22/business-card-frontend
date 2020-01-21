@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './Home';
 import MyCards from './MyCards';
 import CreateCardPage from './CreateCardPage';
+import EditCardPage from './EditCardPage';
 
 let baseURL = "http://localhost:3000"
 
@@ -59,6 +60,10 @@ class App extends React.Component {
     handleSubmit={this.handleSubmit}    
       />}/>
       <Route exact path="/cards/:id" render={(routerProps) => <CreateCardPage {...routerProps} 
+    cardMap={this.state.cardMap} allCards={this.state.allCards} value={this.state.formInput}
+    handleSubmit={this.handleSubmit}   
+      />}/>
+          <Route exact path="/mycards/:id" render={(routerProps) => <EditCardPage {...routerProps} 
     cardMap={this.state.cardMap} allCards={this.state.allCards} value={this.state.formInput}
     handleSubmit={this.handleSubmit}   
       />}/>
