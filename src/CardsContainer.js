@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom';
 
 class CardsContainer extends React.Component {
 
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
   
   render() {
 // console.log(this.props.allCards)
@@ -24,8 +27,8 @@ class CardsContainer extends React.Component {
         phone_number={card.phone_number}
         logo={"https://course_report_production.s3.amazonaws.com/rich/rich_files/rich_files/999/s300/flatironschool.png"}
         style={card.style}>
-        <Link to={`/cards/${card.id}`}> <button 
-          className="btn btn-primary" onClick={this.props.handleCardClick}>Select </button> </Link>
+        <div><Link to={`/cards/${card.id}`}> <button 
+          className="btn btn-primary" onClick={this.props.handleCardClick}>Select </button> </Link></div>
       </Card1>  
       )} 
      </div>

@@ -54,14 +54,22 @@ class Card1 extends React.Component {
           <p className="text-center">Front</p>
           <div className={`card back ${style}`} onClick={this.handleClick}>
           <div className="personal-info">
+           <div className = "container">
+           <div className="row">
+            <div className="col-sm">
             <p>{this.props.name}</p>
             <p>{this.props.title}</p>            
             <p>{this.props.company}</p>
             <p>{this.props.address}</p>
+            </div>
+            <div className="col-sm">
             <p>{this.props.email}</p>
             <p>{this.props.linkedin}</p>
             <p>{this.props.phone_number}</p>
             <p>{this.props.website}</p>
+            </div>
+            </div>
+            </div>
           </div>
           </div>
         </div>

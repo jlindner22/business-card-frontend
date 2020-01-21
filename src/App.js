@@ -52,20 +52,16 @@ class App extends React.Component {
     allCards={this.state.allCards}     
       />}/>
       <Route exact path="/cards" render={(routerProps) => <CardsContainer {...routerProps} 
-    allCards={this.state.allCards} value={this.state.formInput}
-    handleSubmit={this.handleSubmit}    
+    allCards={this.state.allCards}     
       />}/>
       <Route exact path="/mycards" render={(routerProps) => <MyCards {...routerProps} 
-    allCards={this.state.allCards} value={this.state.formInput}
-    handleSubmit={this.handleSubmit}    
+    allCards={this.state.allCards}     
       />}/>
       <Route exact path="/cards/:id" render={(routerProps) => <CreateCardPage {...routerProps} 
-    cardMap={this.state.cardMap} allCards={this.state.allCards} value={this.state.formInput}
-    handleSubmit={this.handleSubmit}   
+    cardMap={this.state.cardMap} allCards={this.state.allCards}    
       />}/>
           <Route exact path="/mycards/:id" render={(routerProps) => <EditCardPage {...routerProps} 
-    cardMap={this.state.cardMap} allCards={this.state.allCards} value={this.state.formInput}
-    handleSubmit={this.handleSubmit}   
+    cardMap={this.state.cardMap} allCards={this.state.allCards}    
       />}/>
     </Switch>
    </body>

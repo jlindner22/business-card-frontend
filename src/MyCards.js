@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Card1 from './Card1'
+import EditCardPage from './EditCardPage';
 
 class MyCards extends React.Component {
 
     state = {
-        createdCards: []
+        createdCards: [],
+        editing: false
     }
 
     componentDidMount() {
@@ -17,9 +19,9 @@ class MyCards extends React.Component {
             this.setState({
                 createdCards: data
             },()=>console.log(this.state.createdCards))
-        
           });
       }
+
       handleSubmit = (e) => {
         e.preventDefault()
         fetch("http://localhost:3000/mycards", {
@@ -55,22 +57,25 @@ class MyCards extends React.Component {
 
      deleteCard = () => {
         fetch("http://localhost:3000/mycards", {
-          method: 'delete'
-        }).then(response =>
-          response.json().then(data => {
-            return data;
-          })
-        );
+          method: 'DELETE'
+        })
+        .then(response => response.json());
+      }
+
+      clickedEditButton = () => {
+            this.setState({editing: !this.state.editing})
+            console.log(this.state.editing)
       }
 
   render() {
    
-  return (
-    <div className="text-center">
-        <br></br>
-        <h1> My Cards</h1>
-        <br></br>
-        {this.state.createdCards.map(cardObj=>{ 
+    return (
+        <div className="text-center">
+            <br></br>
+            <h1> My Cards</h1>
+            <br></br>
+            {this.state.editing ? <EditCardPage/> : 
+            this.state.createdCards.map(cardObj=>{ 
                 return(
                     <Card1
                         key={cardObj.id}
@@ -84,18 +89,20 @@ class MyCards extends React.Component {
                         website={cardObj.website}
                         logo={cardObj.logo}
                         style={cardObj.style}
-                    > <Link to={`/mycards/${cardObj.id}`}>
-                    <button className="btn btn-primary" onClick={this.props.handleCardClick}>Edit </button>
-                    </Link><br></br>
-                    <button className="btn btn-primary" onClick={this.props.handleCardClick}>Delete </button>
-                     </Card1>
-
-
-)}
-)}
-</div>
-    )
-    }
+                        > 
+                        <Link to={`/mycards/${cardObj.id}`}>
+                        <button className="btn btn-primary" onClick={this.clickedEditButton}>Edit </button>
+                        </Link>
+                        <br></br>
+                        <button className="btn btn-primary" onClick={this.deleteCard}>Delete </button>
+                    </Card1>
+            
+                    )}
+                )}
+            
+        </div>
+        )
+     }
 }
 
 export default MyCards;
