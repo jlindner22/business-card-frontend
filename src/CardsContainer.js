@@ -20,20 +20,14 @@ class CardsContainer extends React.Component {
         company={card.company}
         address={card.address}
         email={card.email}
+        linkedin={card.linkedin}
         phone_number={card.phone_number}
         logo={"https://course_report_production.s3.amazonaws.com/rich/rich_files/rich_files/999/s300/flatironschool.png"}
-        style={card.style}
-      >
+        style={card.style}>
         <Link to={`/cards/${card.id}`}> <button 
           className="btn btn-primary" onClick={this.props.handleCardClick}>Select </button> </Link>
       </Card1>  
       )} 
-        
-      {/* : */}
-        {/* {this.props.allCards.map(card => <CreateCardPage card={card}/>)} */}
-     {/* <FormComponent handleChange={this.props.handleChange}
-     value={this.props.formInput} 
-     handleSubmit={this.handleSubmit}/>  */}
      </div>
     </div> 
     );

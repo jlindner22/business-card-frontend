@@ -35,47 +35,6 @@ class App extends React.Component {
     });
   }
 
-  //post info in inputs to backend and navigate to My Cards page
-  handleSubmit = (e) => {
-    e.preventDefault()
-   // fetch(`${baseURL}/cards/${this.props.cardId}/cart`, 
- // {
-    fetch(`${baseURL}/mycards`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Accepts": "application/json",
-      },
-        body: JSON.stringify({
-        name: this.state.name,
-        title: this.state.title,
-        company: this.state.company,
-        address: this.state.address,
-        email: this.state.email,
-        phone_number: this.state.phone_number,
-        website: this.state.website,
-        logo: this.state.logo
-        })
-      })
-  // .then(res => res.json())
-  // .then(response => {
-      // this.setState({...this.state.formInput}, this.props.toggleNewReviewForm)
-    // })
-    console.log("submit", this.state.name)
-    }
-  // )}
-
-
-  //  this instead? 
-   // fetch(`${baseURL}/mycards`, 
-
-//    componentDidUpdate(prevProps) {
-//      let cardMap = {}
-//      if (this.props !== prevProps) {this.state.allCards.map(card => cardMap[card.id] = card)
-//      this.setState({ cardMap })}
-//      console.log(this.state.cardMap)
-//  }
-
   render() {
 
   return (

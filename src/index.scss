@@ -24,6 +24,7 @@ $padding:30px;
   background-size: 6px 6px;
   background-position: 0 0, 3px 3px;
 }
+
 .center {
   display: block;
   margin-left: auto;
@@ -43,8 +44,10 @@ $padding:30px;
   display: grid;
   font-family: 'Trebuchet MS', sans-serif;
   height: 200px;
+  // height: 270px;
   margin: 20px auto;
   width: 350px;
+  // width: 375px;
 }
 .business-card{
   width: 25rem;

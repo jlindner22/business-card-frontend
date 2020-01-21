@@ -7,7 +7,7 @@ class FormComponent extends React.Component {
   return (
 
 <div className="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
-<form className="justify-content-center">
+<form className="justify-content-center" onSubmit={this.props.handleSubmit}>
   <div className="form-group">
   <label >
     Name: 
@@ -35,6 +35,11 @@ class FormComponent extends React.Component {
   </label>
   <br></br>
   <label >
+  LinkedIn: 
+    <input className="form-control" type="text" name="linkedin" value={this.props.linkedin} onChange={this.props.handleChange}/>
+  </label>
+  <br></br>
+  <label >
     Phone Number: 
     <input className="form-control" type="text" name="phone_number" value={this.props.phone_number} onChange={this.props.handleChange}/>
   </label>
@@ -49,7 +54,9 @@ class FormComponent extends React.Component {
     <input className="form-control" type="text" name="logo" value={this.props.logo} onChange={this.props.handleChange}/>
   </label>
   <br/>
-  <input className="btn btn-primary btn-lg" type="submit" value="Save" />
+  <br></br>
+  
+  <input className="btn btn-primary btn-lg" type="submit" value="Save"/>
   </div>
 </form>
 </div>

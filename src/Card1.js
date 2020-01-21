@@ -47,10 +47,11 @@ class Card1 extends React.Component {
           <div className={`card back ${style}`} onClick={this.handleClick}>
           <div className="personal-info">
             <p>{this.props.name}</p>
-            <p>{this.props.title}</p>            <p>{this.props.address}</p>
+            <p>{this.props.title}</p>            
             <p>{this.props.company}</p>
             <p>{this.props.address}</p>
             <p>{this.props.email}</p>
+            <p>{this.props.linkedin}</p>
             <p>{this.props.phone_number}</p>
             <p>{this.props.website}</p>
           </div>
