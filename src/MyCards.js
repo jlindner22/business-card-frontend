@@ -55,12 +55,16 @@ class MyCards extends React.Component {
       }
     )}
 
-     deleteCard = () => {
-        fetch("http://localhost:3000/mycards", {
-          method: 'DELETE'
+     deleteCard = (card) => {
+        fetch(`http://localhost:3000/mycards/${card.id}`, {
+          method: 'DELETE',
         })
-        .then(response => response.json());
-      }
+            this.setState({
+                createdCards: [...this.state.createdCards].filter(deleteCard => card !== deleteCard)
+            })
+    }
+
+
 
       clickedEditButton = () => {
             this.setState({editing: !this.state.editing})
@@ -76,7 +80,9 @@ class MyCards extends React.Component {
             <br></br>
             {this.state.editing ? <EditCardPage/> : 
             this.state.createdCards.map(cardObj=>{ 
-                return(
+                return (
+                    <div className="card-deck">
+                    <div className="container flex row col-sm-12">
                     <Card1
                         key={cardObj.id}
                         name={cardObj.name}
@@ -90,13 +96,14 @@ class MyCards extends React.Component {
                         logo={cardObj.logo}
                         style={cardObj.style}
                         > 
-                        <Link to={`/mycards/${cardObj.id}`}>
+                        {/* <Link to={`/mycards/${cardObj.id}`}>
                         <button className="btn btn-primary" onClick={this.clickedEditButton}>Edit </button>
-                        </Link>
-                        <br></br>
-                        <button className="btn btn-primary" onClick={this.deleteCard}>Delete </button>
+                        </Link> */}
+                        {/* <br></br> */}
+                        <button className="btn btn-primary" onClick={()=> this.deleteCard(cardObj)}>Delete </button>
                     </Card1>
-            
+            </div>
+            </div>
                     )}
                 )}
             
@@ -106,16 +113,3 @@ class MyCards extends React.Component {
 }
 
 export default MyCards;
-
-{/* //tie edit card button to individual cards
-//add functionality to direct to an edit page, 
-//create function to send a patch request when button/edit form submitted from edit page  */}
-
-{/* 
-        <button 
-          className="btn btn-primary"> Testing testing 123
-          </button>
-          <br></br>
-        <button 
-          className="btn btn-primary"> Edit
-          </button> */}

@@ -62,9 +62,9 @@ class CreateCardPage extends React.Component {
         this.setState ({
             myCards: [...this.state.myCards, data]
         })
-
-        console.log("form data", data)
-        console.log("mycards", this.state.myCards)
+            this.props.history.push('/mycards');
+        // console.log("form data", data)
+        // console.log("mycards", this.state.myCards)
 
     }
   )}
@@ -92,8 +92,8 @@ class CreateCardPage extends React.Component {
      setStyle(cardStyle)
 
         return (
-            <div className = "container">
-             <Card1
+            <div className ="container">
+             <Card1 
                 name={this.state.name}
                 title={this.state.title}
                 company={this.state.company}

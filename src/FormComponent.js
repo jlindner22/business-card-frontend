@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class FormComponent extends React.Component {
 
@@ -7,7 +8,7 @@ class FormComponent extends React.Component {
   return (
 
 <div className="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
-<form className="justify-content-center" onSubmit={this.props.handleSubmit}>
+<form className="justify-content-center">
   <div className="form-group">
   <label >
     Name: 
@@ -55,8 +56,9 @@ class FormComponent extends React.Component {
   </label>
   <br/>
   <br></br>
-  
-  <input className="btn btn-primary btn-lg" type="submit" value="Save"/>
+  <Link to={'/mycards'}>
+  <input className="btn btn-primary btn-lg" type="submit" onClick={this.props.handleSubmit} value="Save"/>
+  </Link>
   </div>
 </form>
 </div>

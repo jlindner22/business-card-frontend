@@ -8,14 +8,13 @@ class CardsContainer extends React.Component {
   componentDidMount() {
     window.scrollTo(0, 0)
   }
-  
+
   render() {
 // console.log(this.props.allCards)
 
   return (
     <div className="card-deck">
     <div className="container flex row col-sm-12">
-      {/* {!this.state.clicked} ?  */}
       {this.props.allCards.map(card => 
       <Card1 
         name={card.name}

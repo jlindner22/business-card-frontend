@@ -46,12 +46,10 @@ class Card1 extends React.Component {
 
   return (
     <div className="col-sm-6" >
-      <div className="business-card " >
-
+      <div className="business-card" >
         {this.state.clicked?
-
         <div>
-          <p className="text-center">Front</p>
+          <p className="text-center font-weight-bold">Front</p>
           <div className={`card back ${style}`} onClick={this.handleClick}>
           <div className="personal-info">
            <div className = "container">
@@ -77,7 +75,7 @@ class Card1 extends React.Component {
         :
 
         <div>
-          <p className="text-center">Back</p>
+          <p className="text-center font-weight-bold">Back</p>
           <div className={`card back ${style}`} onClick={this.handleClick}>
           <div className="personal-info">
             <br></br>
