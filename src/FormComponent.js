@@ -16,11 +16,6 @@ class FormComponent extends React.Component {
   </label>
   <br></br>
   <label >
-    Title: 
-    <input className="form-control" type="text" name="title" value={this.props.title} onChange={this.props.handleChange}/>
-  </label>
-  <br></br>
-  <label >
     Company Name: 
     <input className="form-control" type="text" name="company" value={this.props.company} onChange={this.props.handleChange}/>
   </label>
@@ -33,6 +28,11 @@ class FormComponent extends React.Component {
   <label >
     Email: 
     <input className="form-control" type="text" name="email" value={this.props.email} onChange={this.props.handleChange}/>
+  </label>
+  <br></br>
+  <label >
+  Title: 
+    <input className="form-control" type="text" name="title" value={this.props.title} onChange={this.props.handleChange}/>
   </label>
   <br></br>
   <label >

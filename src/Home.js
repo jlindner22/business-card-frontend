@@ -11,26 +11,13 @@ class Home extends React.Component {
     <div >
         <br></br>
       <h1 className="text-center font-weight-bold"> Welcome to Carded! </h1>
-      <br></br>
-      <br></br>
-      
+      <br></br>      
         <img src={url} className="center"></img>
-        <br></br>
-       <br></br>
- 
+        <br></br> 
        <h3 className="text-center">To get started, take a look at our selection of business card   
        <br></br> 
        templates <Link to="/cards"> here </Link> and choose a card to edit with your information.
        </h3> 
-       <br></br>
-       <br></br>
-       <br></br>
-       <br></br>
-       <br></br>
-       <br></br>
-       <br></br>
-       <br></br>
-       <br></br>
        <br></br>
        <br></br>
        <br></br>

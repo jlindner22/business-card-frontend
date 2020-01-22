@@ -92,7 +92,7 @@ class CreateCardPage extends React.Component {
      setStyle(cardStyle)
 
         return (
-            <div className ="container">
+            // <div className ="container">
              <Card1 
                 name={this.state.name}
                 title={this.state.title}
@@ -105,7 +105,7 @@ class CreateCardPage extends React.Component {
                 logo={this.state.logo}
                 style={cardStyle}
             />
-            </div>
+            // </div>
         )
     }
 
