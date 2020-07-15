@@ -1,6 +1,5 @@
 import React from 'react';
 import Card1 from './Card1';
-import CreateCardPage from './CreateCardPage';
 import { Link } from 'react-router-dom';
 
 class CardsContainer extends React.Component {

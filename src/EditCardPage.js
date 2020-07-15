@@ -1,7 +1,6 @@
 import React from 'react';
 import Card1 from './Card1';
 import FormComponent from './FormComponent';
-import { Route, Switch } from 'react-router-dom';
 import MyCards from './MyCards';
 
 let baseURL = "http://localhost:3000"

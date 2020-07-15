@@ -1,21 +1,18 @@
 import React from 'react';
-// import { Route, Switch } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 
 class Card1 extends React.Component {
 
-  state={
+  state = {
     clicked: true
   }
 
-  handleClick=()=>{
+  handleClick = () => {
     this.setState({
       clicked: !this.state.clicked
-    },()=>console.log(this.state.clicked))
+    }, ()=>console.log(this.state.clicked))
   }
 
-  render() {
-
+  render () {
     let style;
     let price;
     if(this.props.style ==="basic white"){
@@ -79,7 +76,7 @@ class Card1 extends React.Component {
           <div className={`card back ${style}`} onClick={this.handleClick}>
           <div className="personal-info">
             <br></br>
-            <img src={this.props.logo} className="logo"></img>
+            <img className="logo" src={this.props.logo} alt="Logo"></img>
           </div>
         </div>
         </div>

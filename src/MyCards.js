@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Card1 from './Card1'
 import EditCardPage from './EditCardPage';
 
@@ -64,15 +63,12 @@ class MyCards extends React.Component {
             })
     }
 
-
-
       clickedEditButton = () => {
             this.setState({editing: !this.state.editing})
             console.log(this.state.editing)
       }
 
   render() {
-   
     return (
         <div className="text-center">
             <br></br>

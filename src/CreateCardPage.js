@@ -1,8 +1,6 @@
 import React from 'react';
 import Card1 from './Card1';
 import FormComponent from './FormComponent';
-import { Route, Switch } from 'react-router-dom';
-import MyCards from './MyCards';
 
 let baseURL = "http://localhost:3000"
 
@@ -30,7 +28,7 @@ class CreateCardPage extends React.Component {
   handleChange = (e) => {
     this.setState({
         [e.target.name]: e.target.value
-    },()=>console.log(this.state.name))
+    }, ()=>console.log(this.state.name))
   }
 
   //post info in inputs to backend and navigate to My Cards page
@@ -63,12 +61,8 @@ class CreateCardPage extends React.Component {
             myCards: [...this.state.myCards, data]
         })
             this.props.history.push('/mycards');
-        // console.log("form data", data)
-        // console.log("mycards", this.state.myCards)
-
     }
   )}
-  // )}
 
   render() {
 
@@ -78,8 +72,7 @@ class CreateCardPage extends React.Component {
         if (this.state.style === ''){
             this.setState({
                 style: style
-            },()=> console.log(this.state.style))
-
+            }, ()=> console.log(this.state.style))
         }
     }
 
