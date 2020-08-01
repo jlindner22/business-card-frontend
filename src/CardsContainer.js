@@ -12,6 +12,10 @@ class CardsContainer extends React.Component {
 // console.log(this.props.allCards)
 
   return (
+    <div>
+      <br></br>
+    <h1 className="display-4 text-center"> All Cards</h1>
+    <br></br>
     <div className="card-deck">
     <div className="container flex row col-sm-12">
       {this.props.allCards.map(card => 
@@ -31,6 +35,7 @@ class CardsContainer extends React.Component {
       )} 
      </div>
     </div> 
+    </div>
     );
   }
 }

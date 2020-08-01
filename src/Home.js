@@ -9,7 +9,7 @@ class Home extends React.Component {
     return (
       <div >
         <br></br>
-        <h1 className="text-center font-weight-bold welcome"> Welcome to Carded! </h1>
+        <h1 className="text-center welcome display-4"> Welcome to Carded! </h1>
         <br></br>      
           <img className="center" src={url} alt="Home"></img>
           <br></br> 

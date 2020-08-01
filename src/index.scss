@@ -5,12 +5,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: rgb(231,249,252);
-background: radial-gradient(circle, rgba(231,249,252,0.9878326330532213) 10%, rgba(177,209,247,1) 74%);
+  // background: rgb(231,249,252);
+  // background: rgba(231,249,252,0.9878326330532213)
+  background: radial-gradient(circle, rgba(231,249,252,0.9878326330532213) 10%, rgba(177,209,247,1) 74%);
 }
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+
 }
 // @import 'https://fonts.googleapis.com/css?family=Open+Sans|Roboto:300';
 $padding:30px;
@@ -141,7 +144,7 @@ p {
 }
 
 .welcome {
-  font-color: navy;
+  color: midnightblue;
 }
 
 

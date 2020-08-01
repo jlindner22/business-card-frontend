@@ -72,7 +72,7 @@ class MyCards extends React.Component {
     return (
         <div className="text-center">
             <br></br>
-            <h1> My Cards</h1>
+            <h1 className="display-4"> My Cards</h1>
             <br></br>
             {this.state.editing ? <EditCardPage/> : 
             this.state.createdCards.map(cardObj=>{ 
